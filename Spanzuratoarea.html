@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+/*body{
+         background-image:url('pexels-philippe-donn-1114690.jpg');
+         background-size: 100% 100%;
+         background-attachment: fixed;}*/
+        h1{
+            color: #000000;
+        }
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          background-color: transparent;
+          grid-auto-rows: minmax(100px, auto);
+          grid-gap: 1em;
+          justify-items: stretch;
+          align-items: stretch;
+        }
+    .grid-item {
+    background-color:transparent;
+    border: solid #000000;
+    padding: 20px;
+    font-size:    30px;
+    text-align: center;
+    }
+  .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.deghicit{
+align-self: start;
+}
+.txgic{
+    align-self: start;
+}
+</style>
+</head>
+<body>
+
+<h1> <img src="icon.png" alt=""> Spanzuratoarea </h1>
+
+
+<div class="grid-container">
+  <div class="grid-item deghicit">
+<label for="Text de ghicit">XXXXXXX</label>
+  </div>
+  <div class="grid-item butverif">
+    <button class="button">
+        Verifica
+    </button>
+  </div>
+  <div class="grid-item txgic">
+    <input oninput="this.value = this.value.toUpperCase()" type="text" name="" id="" maxlength="1">
+  </div>  
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>  
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>  
+</div>
+
+</body>
+</html>
