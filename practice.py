@@ -18,7 +18,7 @@ def alege_un_cuvant():
     num = random.randint(1, toatecuvintele)
     uncuvant = cuvinte[num][0]
     unindiciu = cuvinte[num][1]
-    return render_template("spanzy.html", jucator=jucator, cuvant=uncuvant, indiciu=unindiciu)
+    return render_template("Spanzuratoarea.html", jucator=jucator, cuvant=uncuvant, indiciu=unindiciu)
 if __name__ == "__main__":
     app.run()
 

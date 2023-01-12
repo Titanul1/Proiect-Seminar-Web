@@ -6,7 +6,9 @@
          background-image:url('pexels-philippe-donn-1114690.jpg');
          background-size: 100% 100%;
          background-attachment: fixed;}*/
-        h1{
+
+         /* doar momentan
+         h1{
             color: #000000;
         }
         .g-c {
@@ -70,26 +72,20 @@ grid-row: 1/3;
 </head>
 <body>
 
-<h1> <img src="icon.png" alt=""> Spanzuratoarea </h1>
+<h1> <img src="icon.png" alt=""> Bine ai venit la Spanzuratoarea, {{jucator}} </h1>
 
-
-<div class="g-c">
-  <div class="b1">
-<label for="Text de ghicit">XXXXXXX</label>
-  </div>
-  <div class="b2">
-    <button class="button">
-        Verifica
-    </button>
-  </div>
-  <div class="b3">
-    <input oninput="this.value = this.value.toUpperCase()" type="text" name="verTB" id="" maxlength="1">
-  </div>  
-  <div class="b4">4</div>
-  <div class="b5">5</div>
-  <div class="b6">6</div>  
-
-</div>
-
+<h2> Cuvant de joc: {{cuvant}}</h2>
+<h2> Indiciu: {{indiciu}}</h2>
+<button onclick="initializare()">Incepe jocul</button>
+<br><br><br>
+<label for="Text de ghicit" id="arata"></label>
+<br><br><br>
+<input type="text" name="verTB" id="ialitera" maxlength="1">
+<br><br><br>
+<button class="button" onclick="ghicire()">Verifica</button>
+<br><br><br>
+<p>Numar de ghici:</p>
+<p id="nrghici"></p>
+<script src="../verificarelitera.js"></script>
 </body>
 </html>
