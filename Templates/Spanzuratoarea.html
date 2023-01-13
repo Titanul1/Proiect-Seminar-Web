@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1> <img src="/static/icon.png">Vai, vai, avem un infidel rau de spanzurat pe nume {{jucator}}!</h1>
+<div>
+<h2> Indiciu: {{indiciu}}</h2>
+<button onclick="faStringAdresa()">Un alt cuvant, te rog.</button>
+<button onclick="mergiAcasa()">Inapoi</button>
+<br><br>
+<img src="/static/3ghici.jpg" id="poza"><br><br>
+<label for="Text de ghicit" id="arata"></label>
+<br><br>
+<input type="text" name="verTB" id="ialitera" maxlength="1">
+<br><br>
+<button class="button" onclick="ghicire()" id="butonv">Verifica</button>
+<br><br>
+<p>Numar de ghicitori:</p>
+<p id="nrghici"></p>
+</div>
+<script src="/static/verificarelitera.js"></script>
+<script>
+  function faStringAdresa()
+  {
+    var url = "http://127.0.0.1:5000/?nume=" + "{{jucator}}" +"&nivel=" + "{{nivel}}";
+    console.log(url);
+    window.location.href=url; 
+  }
+  function mergiAcasa()
+  {
+    var url = "/static/acasa.html";
+    window.location.href=url;
+  }
+  initializare("{{cuvant}}");
+</script>
+</body>
+</html>
