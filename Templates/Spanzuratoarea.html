@@ -1,91 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style> 
-/*body{
-         background-image:url('pexels-philippe-donn-1114690.jpg');
-         background-size: 100% 100%;
-         background-attachment: fixed;}*/
-
-         /* doar momentan
-         h1{
-            color: #000000;
-        }
-        .g-c {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          background-color: transparent;
-          grid-auto-rows: minmax(100px, auto);
-          grid-gap: 1em;
-          justify-items: stretch;
-          align-items: stretch;
-        }
-        .g-c > div{
-          background: #eee;
-          padding: 1em;
-        }
-        .g-c > div:nth-child(odd){
-          background: #ddd;
-        }
-  .button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.b1{
-grid-column: 1/3;
-grid-row: 1/3;
-align-self:start;
-}
-.b2{
-grid-column: 2/2;
-grid-row: 1;
-align-self:end;
-}
-.b3{
-grid-column: 1;
-grid-row: 1;
-align-self: end;
-}
-.b4{
-grid-column: 2/4;
-grid-row: 3;
-
-}
-/*.b5{
-grid-column: 3;
-grid-row: 1/3;
-}
-.b6{
-grid-column: 3;
-grid-row: 1/3;
-}*/
-
-</style>
 </head>
 <body>
-
-<h1> <img src="icon.png" alt=""> Bine ai venit la Spanzuratoarea, {{jucator}} </h1>
-
-<h2> Cuvant de joc: {{cuvant}}</h2>
+<h1> <img src="/static/icon.png">Vai, vai, avem un infidel rau de spanzurat pe nume {{jucator}}!</h1>
+<div>
 <h2> Indiciu: {{indiciu}}</h2>
-<button onclick="initializare()">Incepe jocul</button>
-<br><br><br>
+<button onclick="faStringAdresa()">Un alt cuvant, te rog.</button>
+<button onclick="mergiAcasa()">Inapoi</button>
+<br><br>
+<img src="/static/3ghici.jpg" id="poza"><br><br>
 <label for="Text de ghicit" id="arata"></label>
-<br><br><br>
+<br><br>
 <input type="text" name="verTB" id="ialitera" maxlength="1">
-<br><br><br>
-<button class="button" onclick="ghicire()" id="butonv" disabled>Verifica</button>
-<br><br><br>
-<p>Numar de ghici:</p>
+<br><br>
+<button class="button" onclick="ghicire()" id="butonv">Verifica</button>
+<br><br>
+<p>Numar de ghicitori:</p>
 <p id="nrghici"></p>
-<script src="../verificarelitera.js"></script>
+</div>
+<script src="/static/verificarelitera.js"></script>
+<script>
+  function faStringAdresa()
+  {
+    var url = "http://127.0.0.1:5000/?nume=" + "{{jucator}}" +"&nivel=" + "{{nivel}}";
+    console.log(url);
+    window.location.href=url; 
+  }
+  function mergiAcasa()
+  {
+    var url = "/static/acasa.html";
+    window.location.href=url;
+  }
+  initializare("{{cuvant}}");
+</script>
 </body>
 </html>

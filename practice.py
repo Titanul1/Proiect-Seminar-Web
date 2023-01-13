@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def alege_un_cuvant():
     jucator = request.args.get("nume")
+    if jucator == None: jucator = "... hm, nici nu stim numele lui"
     nivel = request.args.get("nivel")
     fisier = None   # ca sa existe afara de scopul if
     if nivel=="usor":
@@ -18,7 +19,8 @@ def alege_un_cuvant():
     num = random.randint(1, toatecuvintele)
     uncuvant = cuvinte[num][0]
     unindiciu = cuvinte[num][1]
-    return render_template("Spanzuratoarea.html", jucator=jucator, cuvant=uncuvant, indiciu=unindiciu)
+    return render_template("Spanzuratoarea.html", jucator=jucator, cuvant=uncuvant, indiciu=unindiciu, nivel=nivel)
+
 if __name__ == "__main__":
     app.run()
 

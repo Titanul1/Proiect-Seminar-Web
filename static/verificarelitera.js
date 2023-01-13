@@ -1,17 +1,21 @@
-var cuvant="BIRD";
-var numstelute = cuvant.length
+var cuvant;
+var numstelute;
 var modificat;
 var numghici;
 var initializat = false;
 
-function initializare()
+function initializare(cuv)
 {
+    cuvant = cuv.toUpperCase();
+    numstelute = cuvant.length;
     modificat = ""
     for (let i = 0; i < cuvant.length; i++)
     {
         modificat = modificat + "*";
     }
     document.getElementById("arata").innerHTML = modificat;
+    document.getElementById("poza").src = "/static/3ghici.jpg";
+    document.getElementById("ialitera").value ="";
     initializat = true;
     numstelute = cuvant.length;
     numghici = 3;
@@ -27,14 +31,23 @@ function ghicire()
         numghici--;
         document.getElementById("nrghici").innerHTML = numghici;
     }
-    if (numghici == 0)
+    switch (numghici)
     {
-        document.getElementById("arata").innerHTML = "Ati pierdut jocul.";
-        document.getElementById("butonv").disabled = true;
+        case 2:
+            document.getElementById("poza").src = "/static/2ghici.jpg";
+            break;
+        case 1:
+            document.getElementById("poza").src = "/static/1ghici.jpg";
+            break;
+        case 0:
+            document.getElementById("poza").src = "/static/0ghici.jpg";
+            document.getElementById("arata").innerHTML = "Ai pierdut jocul.";
+            document.getElementById("butonv").disabled = true;
+            break;
     }
-    else if (numstelute == 0)
+    if (numstelute == 0)
     {
-        document.getElementById("arata").innerHTML = "Ati castigat jocul!";
+        document.getElementById("arata").innerHTML = "Ai castigat jocul!";
         document.getElementById("butonv").disabled = true;
     }
     document.getElementById("ialitera").value = "";
@@ -42,6 +55,9 @@ function ghicire()
 
 function verifica(ch) //daca este gasit sau deja folosit, returneaza true
 {
+    console.log(ch);
+    console.log(modificat);
+    console.log(cuvant);
     ch = ch[0];
     gasit=false;
     for (let i = 0; i < cuvant.length; i++)
