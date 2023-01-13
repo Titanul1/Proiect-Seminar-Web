@@ -8,8 +8,9 @@ def alege_un_cuvant():
     jucator = request.args.get("nume")
     if jucator == None: jucator = "... hm, nici nu stim numele lui"
     nivel = request.args.get("nivel")
+    print(nivel)
     fisier = None   # ca sa existe afara de scopul if
-    if nivel=="usor":
+    if nivel=="Usor":
         fisier = open("usor.csv", "r")
     else:
         fisier = open("greu.csv", "r")
